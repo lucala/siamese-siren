@@ -35,28 +35,28 @@
     <p class="text">Comparison of noisy and denoised <i>libri3</i> and <i>choice</i> samples<sup>1</sup>. Notice the stereo effect from different noise but with the same underlying signal in the noisy reconstruction.</p>
     <div class="row">
       <div class="col">
-        <h5>Ground Truth</h5>
+        <p>Ground Truth</p>
         <img src="github_pages_results/noise_reduce/libri3_2x256_1x128siam_melspec_ground_truth_melspec.png" alt="GT libri3" class="img-fluid">
         <audio controls class="audio-player">
           <source src="github_pages_results/noise_reduce/libri3_2x256_1x128siam_melspec_ground_truth.mp3" type="audio/mpeg">
         </audio>
       </div>
       <div class="col">
-        <h5>Noisy Reconstruction</h5>
+        <p>Noisy Reconstruction</p>
         <img src="github_pages_results/noise_reduce/libri3_2x256_1x128siam_melspec_2500_quant_best_melspec.png" alt="Quant. Siamese SIREN" class="img-fluid">
         <audio controls class="audio-player">
           <source src="github_pages_results/noise_reduce/libri3_2x256_1x128siam_melspec_2500_quant_best_stereo.mp3" type="audio/mpeg">
         </audio>
       </div>
       <div class="col">
-        <h5>Noise Estimate</h5>
+        <p>Noise Estimate</p>
         <img src="github_pages_results/noise_reduce/libri3_2x256_1x128siam_melspec_2500_noise_estimate.png" alt="Image 3" class="img-fluid">
         <audio controls class="audio-player">
           <source src="github_pages_results/noise_reduce/libri3_2x256_1x128siam_melspec_2500_best_noise.mp3" type="audio/mpeg">
         </audio>
       </div>
       <div class="col">
-        <h5>Clean Reconstruction</h5>
+        <p>Clean Reconstruction</p>
         <img src="github_pages_results/noise_reduce/nr_libri3_2x256_1x128siam_melspec_2500_quant_best_melspec.png" alt="Image 3" class="img-fluid">
         <audio controls class="audio-player">
           <source src="github_pages_results/noise_reduce/libri3_2x256_1x128siam_melspec_2500_quant_best_nr.mp3" type="audio/mpeg">
@@ -92,12 +92,39 @@
     <p><small><sup>1</sup>https://librosa.org/doc/main/recordings.html</small></p>
 
     <h5 class="top-title">The following experiments use three LibriSpeech and three GTZAN samples each. These samples were selected based on their ground truth diversity, not on their reconstruction quality.</h5>
+    
+    <h2 class="top-title">Noise Reduce without Noise Estimate</h2>
+    <p class="text">Comparison on noise reduction with noise estimate and without noise estimate. We observe strong cut-off when no noise estimate is provided.</p>
+    <div class="row">
+      <div class="col">
+        <p>Ground Truth</p>
+        <img src="github_pages_results/noise_comparison/choice_2x256_1x128siam_melspec_ground_truth_melspec.png" alt="GT choice" class="img-fluid">
+        <audio controls class="audio-player">
+          <source src="github_pages_results/noise_comparison/choice_2x256_1x128siam_melspec_ground_truth.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+      <div class="col">
+        <p>Reconstruction without Noise Estimate</p>
+        <img src="github_pages_results/noise_comparison/nr_choice_2x256_1x128siam_melspec_2500_quant_best_melspec_stationary_no_estimate.png" alt="without estimate" class="img-fluid">
+        <audio controls class="audio-player">
+          <source src="github_pages_results/noise_comparison/choice_2x256_1x128siam_melspec_2500_quant_best_nr_stationary_no_estimate.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+      <div class="col">
+        <p>Reconstruction with Noise Estimate</p>
+        <img src="github_pages_results/noise_comparison/nr_choice_2x256_1x128siam_melspec_2500_quant_best_melspec.png" alt="with estimate" class="img-fluid">
+        <audio controls class="audio-player">
+          <source src="github_pages_results/noise_comparison/choice_2x256_1x128siam_melspec_2500_quant_best_nr.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+    </div>
+    
     <h2>Quantized SIREN comparison</h2>
     <!-- <h5>[Shared, Siamese, #PE, Omega0, Omega, #Params]</h5> -->
     <p class="text">Comparison of different SIREN architectures. All reconstructions are computed after network quantization. We observe that the original SIREN, without positional encoding, is unable to reconstruct the signal.<br>PE refers to positional encoding, optimized SIREN refers to &omega;=100, NR refers to the Noise Reduce algorithm.</p>
     <div class="row">
       <div class="col">
-        <h5>Ground Truth</h5>
+        <p>Ground Truth</p>
         <audio controls class="audio-player">
           <source src="github_pages_results/comparison/ref_4.mp3" type="audio/mpeg">
         </audio>
@@ -268,7 +295,7 @@
     <p class="text">Comparison and effect on reconstruction quality when reducing network size. We observe strong signal corruption with reduced network size.<br>How to read column [number of <i>shared</i> layers <b>x</b> layer width, number of <i>siamese</i> layers <b>x</b> layer width, number of parameters]</p>
     <div class="row">
       <div class="col">
-        <h5>Ground Truth</h5>
+        <p>Ground Truth</p>
         <audio controls class="audio-player">
           <source src="github_pages_results/architecture/ref_3.mp3" type="audio/mpeg">
         </audio>
@@ -434,7 +461,7 @@
     <p class="text">Comparison on combination of shared and siamese layers. We observe an optimal trade-off when keeping two layers shared and one siamese layer.<br>How to read column [number of <i>shared</i> layers <b>x</b> layer width, number of <i>siamese</i> layers <b>x</b> layer width, number of parameters]</p>
     <div class="row">
       <div class="col">
-        <h5>Ground Truth</h5>
+        <p>Ground Truth</p>
         <audio controls class="audio-player">
           <source src="github_pages_results/siam_bonding/ref_3.mp3" type="audio/mpeg">
         </audio>
@@ -595,6 +622,7 @@
         </audio>
       </div>
     </div>
+    
   </div>
 </body>
 </html>
