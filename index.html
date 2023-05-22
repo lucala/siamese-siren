@@ -14,14 +14,25 @@
       align-items: center;
       justify-content: center;
     }
+    .main-title {
+      margin-top: 100px;
+    }
+    .sub-title {
+      margin-bottom: 75px;
+    }
+    .top-title {
+      margin-top: 35px;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1 class="text-center">Siamese SIREN: Audio Compression with Implicit Neural Representations</h1>
-    <p class="text-center">Use headphones for best experience.</p>
+    <h1 class="text-center main-title">Siamese SIREN: Audio Compression with<br>Implicit Neural Representations</h1>
+    <p class="text-center sub-title">Anonymous Authors</p>
+    <h4 class="text">Use headphones for best experience.</h4>
 
-    <h2>Siamese SIREN</h2>
+    <h2 class="top-title">Siamese SIREN</h2>
+    <p class="text">Comparison of noisy and denoised <i>libri3</i> and <i>choice</i> samples<sup>1</sup>. Notice the stereo effect from different noise but with the same underlying signal in the noisy reconstruction.</p>
     <div class="row">
       <div class="col">
         <h5>Ground Truth</h5>
@@ -31,7 +42,7 @@
         </audio>
       </div>
       <div class="col">
-        <h5>Quant. Siamese SIREN</h5>
+        <h5>Noisy Reconstruction</h5>
         <img src="github_pages_results/noise_reduce/libri3_2x256_1x128siam_melspec_2500_quant_best_melspec.png" alt="Quant. Siamese SIREN" class="img-fluid">
         <audio controls class="audio-player">
           <source src="github_pages_results/noise_reduce/libri3_2x256_1x128siam_melspec_2500_quant_best_stereo.mp3" type="audio/mpeg">
@@ -45,7 +56,7 @@
         </audio>
       </div>
       <div class="col">
-        <h5>Quant. Siamese SIREN + NR</h5>
+        <h5>Clean Reconstruction</h5>
         <img src="github_pages_results/noise_reduce/nr_libri3_2x256_1x128siam_melspec_2500_quant_best_melspec.png" alt="Image 3" class="img-fluid">
         <audio controls class="audio-player">
           <source src="github_pages_results/noise_reduce/libri3_2x256_1x128siam_melspec_2500_quant_best_nr.mp3" type="audio/mpeg">
@@ -78,7 +89,12 @@
       </div>
     </div>
 
-    <h2>Quantized SIREN comparison</h2><h5>[Shared, Siamese, #PE, Omega0, Omega, #Params]</h5>
+    <p><small><sup>1</sup>https://librosa.org/doc/main/recordings.html</small></p>
+
+    <h5 class="top-title">The following experiments use three LibriSpeech and three GTZAN samples each. These samples were selected based on their ground truth diversity, not on their reconstruction quality.</h5>
+    <h2>Quantized SIREN comparison</h2>
+    <!-- <h5>[Shared, Siamese, #PE, Omega0, Omega, #Params]</h5> -->
+    <p class="text">Comparison of different SIREN architectures. All reconstructions are computed after network quantization. We observe that the original SIREN, without positional encoding, is unable to reconstruct the signal.<br>PE refers to positional encoding, optimized SIREN refers to &omega;=100, NR refers to the Noise Reduce algorithm.</p>
     <div class="row">
       <div class="col">
         <h5>Ground Truth</h5>
@@ -87,25 +103,29 @@
         </audio>
       </div>
       <div class="col">
-        <p>[3x256, 0, 0, 3000, 30, 794k]</p>
+        <p>Original SIREN</p>
+        <!-- <p>[3x256, 0, 0, 3000, 30, 794k]</p> -->
         <audio controls class="audio-player">
           <source src="github_pages_results/comparison/sample_4_model_0.mp3" type="audio/mpeg">
         </audio>
       </div>
       <div class="col">
-        <p>[3x256, 0, 16, 30, 30, 843k]</p>
+        <p>PE + SIREN</p>
+        <!-- <p>[3x256, 0, 16, 30, 30, 843k]</p> -->
         <audio controls class="audio-player">
           <source src="github_pages_results/comparison/sample_4_model_1.mp3" type="audio/mpeg">
         </audio>
       </div>
       <div class="col">
-        <p>[3x256, 0, 16, 100, 100, 843k]</p>
+        <p>Optimized SIREN</p>
+        <!-- <p>[3x256, 0, 16, 100, 100, 843k]</p> -->
         <audio controls class="audio-player">
           <source src="github_pages_results/comparison/sample_4_model_2.mp3" type="audio/mpeg">
         </audio>
       </div>
       <div class="col">
-        <p>[2x256, 1x128, 16, 100, 100, 513k]</p>
+        <p>Siamese SIREN + NR</p>
+        <!-- <p>[2x256, 1x128, 16, 100, 100, 513k]</p> -->
         <audio controls class="audio-player">
           <source src="github_pages_results/comparison/sample_4_model_3_nr.mp3" type="audio/mpeg">
         </audio>
@@ -244,7 +264,8 @@
     </div>
 
 
-    <h2>Effect on decreasing network size [Shared, Siamese, #Params]</h2>
+    <h2 class="top-title">Effect on decreasing network size</h2>
+    <p class="text">Comparison and effect on reconstruction quality when reducing network size. We observe strong signal corruption with reduced network size.<br>How to read column [number of <i>shared</i> layers <b>x</b> layer width, number of <i>siamese</i> layers <b>x</b> layer width, number of parameters]</p>
     <div class="row">
       <div class="col">
         <h5>Ground Truth</h5>
@@ -253,25 +274,25 @@
         </audio>
       </div>
       <div class="col">
-        <h5>[3x256, 0, 843k]</h5>
+        <p>[3x256, 0, 843k]</p>
         <audio controls class="audio-player">
           <source src="github_pages_results/architecture/sample_3_model_4.mp3" type="audio/mpeg">
         </audio>
       </div>
       <div class="col">
-        <h5>[2x256, 1x128, 513k]</h5>
+        <p>[2x256, 1x128, 513k]</p>
         <audio controls class="audio-player">
           <source src="github_pages_results/architecture/sample_3_model_5_nr.mp3" type="audio/mpeg">
         </audio>
       </div>
       <div class="col">
-        <h5>[2x128, 1x64, 142k]</h5>
+        <p>[2x128, 1x64, 142k]</p>
         <audio controls class="audio-player">
           <source src="github_pages_results/architecture/sample_3_model_3_nr.mp3" type="audio/mpeg">
         </audio>
       </div>
       <div class="col">
-        <h5>[2x64, 1x32, 42k]</h5>
+        <p>[2x64, 1x32, 42k]</p>
         <audio controls class="audio-player">
           <source src="github_pages_results/architecture/sample_3_model_1_nr.mp3" type="audio/mpeg">
         </audio>
@@ -409,7 +430,8 @@
     </div>
 
 
-    <h2>Shared Layer and Siamese Layer Configuration [Shared, Siamese, #Params]</h2>
+    <h2 class="top-title">Shared Layer and Siamese Layer Configuration</h2>
+    <p class="text">Comparison on combination of shared and siamese layers. We observe an optimal trade-off when keeping two layers shared and one siamese layer.<br>How to read column [number of <i>shared</i> layers <b>x</b> layer width, number of <i>siamese</i> layers <b>x</b> layer width, number of parameters]</p>
     <div class="row">
       <div class="col">
         <h5>Ground Truth</h5>
@@ -418,25 +440,25 @@
         </audio>
       </div>
       <div class="col">
-        <h5>[3x256, 0, 843k]</h5>
+        <p>[3x256, 0, 843k]</p>
         <audio controls class="audio-player">
           <source src="github_pages_results/siam_bonding/sample_3_model_3.mp3" type="audio/mpeg">
         </audio>
       </div>
       <div class="col">
-        <h5>[2x256, 1x128, 513k]</h5>
+        <p>[2x256, 1x128, 513k]</p>
         <audio controls class="audio-player">
           <source src="github_pages_results/siam_bonding/sample_3_model_2_nr.mp3" type="audio/mpeg">
         </audio>
       </div>
       <div class="col">
-        <h5>[1x256, 2x128, 151k]</h5>
+        <p>[1x256, 2x128, 151k]</p>
         <audio controls class="audio-player">
           <source src="github_pages_results/siam_bonding/sample_3_model_1_nr.mp3" type="audio/mpeg">
         </audio>
       </div>
       <div class="col">
-        <h5>[0, 3x128, 75k]</h5>
+        <p>[0, 3x128, 75k]</p>
         <audio controls class="audio-player">
           <source src="github_pages_results/siam_bonding/sample_3_model_0_nr.mp3" type="audio/mpeg">
         </audio>
