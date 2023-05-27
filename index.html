@@ -26,14 +26,14 @@
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="container sub-title">
     <h1 class="text-center main-title">Siamese SIREN: Audio Compression with<br>Implicit Neural Representations</h1>
     <p class="text-center sub-title">Anonymous Authors</p>
     <h4 class="text">Use headphones for best experience.</h4>
     <h5 class="text">Ensure the page is fully loaded. In the event that audio or spectrograms are not available, please reload the page.</h5>
 
     <h2 class="top-title">Siamese SIREN</h2>
-    <p class="text">Comparison of noisy and denoised <i>libri3</i> and <i>choice</i> samples<sup>1</sup>. Notice the stereo effect from different noise but with the same underlying signal in the noisy reconstruction.</p>
+    <p class="text">Comparison of noisy and denoised <i>libri3</i> and <i>choice</i> samples.<sup>1</sup><br>Notice the stereo effect in the noisy reconstruction due to different noise, but with the same underlying signal.</p>
     <div class="row">
       <div class="col">
         <p>Ground Truth</p>
@@ -57,7 +57,7 @@
         </audio>
       </div>
       <div class="col">
-        <p>Clean Reconstruction</p>
+        <p>Denoised Reconstruction</p>
         <img src="github_pages_results/noise_reduce/nr_libri3_2x256_1x128siam_melspec_2500_quant_best_melspec.png" alt="Image 3" class="img-fluid">
         <audio controls class="audio-player">
           <source src="github_pages_results/noise_reduce/libri3_2x256_1x128siam_melspec_2500_quant_best_nr.mp3" type="audio/mpeg">
@@ -90,7 +90,7 @@
       </div>
     </div>
 
-    <p><small><sup>1</sup>https://librosa.org/doc/main/recordings.html</small></p>
+    <p><small><sup>1</sup><a href="https://librosa.org/doc/main/recordings.html" target="_blank" rel="noopener noreferrer"></a>https://librosa.org/doc/main/recordings.html</small></p>
 
     <h2 class="top-title">Noise Reduce without Noise Estimate</h2>
     <p class="text">Comparison on noise reduction with noise estimate and without noise estimate. We observe strong cut-off when no noise estimate is provided.</p>
