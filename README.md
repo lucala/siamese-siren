@@ -1,0 +1,1 @@
+# Siamese SIREN: Audio Compression with Implicit Neural Representations
