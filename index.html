@@ -23,14 +23,28 @@
     .top-title {
       margin-top: 35px;
     }
+    .centered-buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   </style>
 </head>
 <body>
   <div class="container sub-title">
     <h1 class="text-center main-title">Siamese SIREN: Audio Compression with<br>Implicit Neural Representations</h1>
-    <p class="text-center sub-title">Anonymous Authors</p>
-    <h4 class="text">Use headphones for best experience.</h4>
-    <h5 class="text">Ensure the page is fully loaded. In the event that audio or spectrograms are not available, please reload the page.</h5>
+    <p class="text-center sub-title">ICML 2023 Neural Compression Workshop</p>
+    <p class="text-center sub-title">
+      <a href="https://disco.ethz.ch/members/lucala">Luca A. Lanzendörfer</a>
+      and 
+      <a href="https://disco.ethz.ch/members/wroger">Roger Wattenhofer</a>
+    </p>
+    <div class="container centered-buttons">
+      <div class="btn-group">
+        <a href="https://arxiv.org/pdf/2306.12957.pdf" class="btn btn-primary">Paper</a>
+        <a href="https://github.com/lucala/siamese-siren" class="btn btn-primary">Code</a>
+      </div>
+    </div>
 
     <h2 class="top-title">Siamese SIREN</h2>
     <p class="text">Comparison of noisy and denoised <i>libri3</i> and <i>choice</i> samples.<sup>1</sup><br>Notice the stereo effect in the noisy reconstruction due to different noise, but with the same underlying signal.</p>
