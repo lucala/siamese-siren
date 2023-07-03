@@ -1,6 +1,6 @@
 # Siamese SIREN: Audio Compression with Implicit Neural Representations
 
-## [Paper](https://arxiv.org/pdf/2306.12957.pdf) | [Examples](www.example.com)
+## [Paper](https://arxiv.org/pdf/2306.12957.pdf) | [Examples](https://lucala.github.io/siamese-siren/)
 
 <img src='img/siamese_architecture.jpg'>
 
